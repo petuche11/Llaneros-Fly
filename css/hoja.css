@@ -1,15 +1,13 @@
 @charset "UTF-8";
 
-/* ===== RESET Y BASE ===== */
 * {
-  -webkit-box-sizing: border-box; /* Compatibilidad con Safari/Chrome */
-  -moz-box-sizing: border-box;    /* Compatibilidad con Firefox */
-  margin: 0;                      /* Elimina márgenes por defecto */
-  padding: 0;                     /* Elimina padding por defecto */
-  box-sizing: border-box;         /* Incluye border y padding en el ancho/alto total */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Variables CSS: define colores y valores reutilizables en todo el sitio, NO SE SABE PQ SALE ERROR LA IA NO ME DICE NADA TAMPOCO JSMV, SI LO BORRO SE JODE TODO */
 :root {
   --site-max: 1900px;
   --primary-blue: #38B6FF;
@@ -17,93 +15,80 @@
   --text-dark: #08324b;
 }
 
-/* Fondo del body con patrón de aviones pequeños */
 body {
   background-size: 20px auto;
-    background-image: url(../img/peque%C3%B1ito%20aviom.png); /* Patrón repetido de aviones */
+    background-image: url(../img/peque%C3%B1ito%20aviom.png);
 }
 
-/* Páginas internas con fondo blanco sólido */
 body.inner {
     background: #fff;
 }
 
-/* Página de acceso con fondo blanco */
 body.acceso {
     background: #fff;
 }
 
-/* ====== CONTENEDOR PRINCIPAL ====== */
-/* Contenedor principal que centra todo el contenido */
 #contenedor,
 #contenedor2 {
-    width: 100%;                    /* Ocupa todo el ancho disponible */
-    max-width: var(--site-max);     /* Pero no más del máximo definido */
-    margin: 0 auto;                 /* Centra horizontalmente */
-    background: #FFFFFF;            /* Fondo blanco */
-    height: auto;                   /* Altura automática según contenido */
+    width: 100%;
+    max-width: var(--site-max);
+    margin: 0 auto;
+    background: #FFFFFF;
+    height: auto;
 }
 
-/* Variante del contenedor con altura mínima */
 #contenedor2 {
-    min-height: 800px;  /* Altura mínima para páginas internas */
-    float: left;        /* Flotado para el layout */
+    min-height: 800px;
+    float: left;
 }
 
-/* ====== HEADER Y NAVEGACIÓN ====== */
-/* Header principal con logo y navegación */
 #contenedor header {
     width: 100%;
     max-width: var(--site-max);
-    height: 200px;           /* Altura fija del header */
+    height: 200px;
     float: left;
     background-color: #FFFFFF;
-    position: relative;      /* Para posicionar elementos dentro */
-    z-index: 1000;          /* Mantiene el header por encima de otros elementos */
+    position: relative;
+    z-index: 1000;
 }
 
-/* Contenedor del logo */
 #logo {
     width: 500px;
     height: 200px;
     background-color: #FFFFFF;
     float: left;
-    line-height: 170px;      /* Centra verticalmente el contenido */
-    text-align: center;      /* Centra horizontalmente */
+    line-height: 170px;
+    text-align: center;
 }
 
-/* Imagen del logo con dimensiones específicas */
 header #logo img {
     width: 400px;
     height: 200px;
-    margin: 5px 50px;        /* Espaciado alrededor del logo */
+    margin: 5px 50px;
 }
 
-/* Navegación principal */
 #contenedor header nav {
-    width: min(100%, 800px);     /* Ancho responsivo con máximo */
+    width: min(100%, 800px);
     height: 50px;
     background-color: transparent;
-    position: absolute;          /* Posicionado sobre el header */
-    top: 75px;                   /* Posición vertical */
-    left: 50%;                   /* Centra horizontalmente */
-    transform: translateX(-50%); /* Ajuste fino para centrado perfecto */
+    position: absolute;
+    top: 75px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-/* Lista de navegación usando Flexbox */
 header nav ul {
-    list-style-type: none;       /* Elimina bullets de la lista */
-    display: flex;               /* Layout flexbox */
-    align-items: center;         /* Centra verticalmente */
-    justify-content: center;     /* Centra horizontalmente */
-    gap: clamp(8px, 2vw, 24px);  /* Espacio dinámico entre elementos */
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(8px, 2vw, 24px);
     height: 50px;
     padding: 0;
 }
 
-/* Items individuales del menú */
 nav ul li {
-    flex: 0 0 auto;          /* No se expanden ni contraen */
+    flex: 0 0 auto;
     background: transparent;
     width: auto;
     height: auto;
@@ -111,75 +96,66 @@ nav ul li {
     padding: 0;
 }
 
-/* Enlaces del menú con estilo de botón */
 ul li a {
     display: block;
-    background: var(--primary-blue);                    /* Fondo azul */
-    color: #fff;                                        /* Texto blanco */
-    text-decoration: none;                              /* Sin subrayado */
+    background: var(--primary-blue);
+    color: #fff;
+    text-decoration: none;
     font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
-    font-weight: 600;                                   /* Texto semi-bold */
-    font-size: clamp(14px, 1.6vw, 18px);              /* Tamaño responsivo */
-    padding: clamp(8px, 1.2vw, 12px) clamp(14px, 2vw, 26px); /* Padding responsivo */
-    border-radius: 28px;                                /* Bordes redondeados */
-    line-height: 1;                                     /* Altura de línea ajustada */
-    box-shadow: 0 2px 0 rgba(0,0,0,.08);               /* Sombra sutil */
-    transition: color 0.3s ease;                       /* Transición suave al hover */
+    font-weight: 600;
+    font-size: clamp(14px, 1.6vw, 18px);
+    padding: clamp(8px, 1.2vw, 12px) clamp(14px, 2vw, 26px);
+    border-radius: 28px;
+    line-height: 1;
+    box-shadow: 0 2px 0 rgba(0,0,0,.08);
+    transition: color 0.3s ease;
 }
 
-/* Efecto hover en los enlaces */
 ul li a:hover {
-    color: #000;  /* Cambia texto a negro al pasar el mouse */
+    color: #000;
 }
 
-/* ====== HERO/MAIN SECTIONS ====== */
-/* Sección principal con imagen de fondo */
 #contenedor2 main {
-    position: relative;                          /* Para posicionar contenido encima */
+    position: relative;
     width: 100%;
     height: auto;
-    min-height: clamp(280px, 40vw, 550px);     /* Altura responsiva */
-    background-size: cover;                     /* Imagen cubre todo el área */
-    background-position: center;               /* Centra la imagen */
-    background-repeat: no-repeat;              /* No repite la imagen */
-    background-image: url(../img/avion.jpg);   /* Imagen por defecto */
+    min-height: clamp(280px, 40vw, 550px);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../img/avion.jpg);
 }
 
-/* Imagen específica para la página de Check-in */
 #contenedor2.checkin main {
     background-image: url(../img/checking.jpg);
 }
 
-/* Tarjeta/recuadro flotante sobre la imagen hero */
 #contenedor2 main article {
-    position: absolute;                         /* Posicionado sobre la imagen */
-    top: 50%;                                   /* Centro vertical */
-    left: 72%;                                  /* Posición horizontal */
-    transform: translate(-50%, -50%);           /* Centra exactamente */
+    position: absolute;
+    top: 50%;
+    left: 72%;
+    transform: translate(-50%, -50%);
     max-width: 380px;
-    background-color: rgba(255,255,255,0.28);   /* Fondo blanco semi-transparente */
-    border: 1px solid rgba(226,234,233,0.50);  /* Borde sutil */
-    border-radius: 16px;                        /* Bordes redondeados */
-    backdrop-filter: blur(8px);                 /* Efecto de desenfoque del fondo */
-    -webkit-backdrop-filter: blur(8px);         /* Compatibilidad con Safari */
-    box-shadow: 0 10px 30px rgba(0,0,0,.18);   /* Sombra pronunciada */
+    background-color: rgba(255,255,255,0.28);
+    border: 1px solid rgba(226,234,233,0.50);
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,.18);
     color: var(--text-dark);
-    z-index: 2;                                 /* Por encima de la imagen */
+    z-index: 2;
     height: auto;
     padding: 20px;
     text-align: center;
     font-size: large;
 }
 
-/* Título dentro del recuadro hero */
 #contenedor2 main article h1 {
     margin-bottom: 15px;
     font-size: 27px;
     font-weight: bold;
 }
 
-/* ====== SECCIONES ====== */
-/* Secciones generales del sitio */
 #contenedor section {
     float: left;
     width: 100%;
@@ -188,84 +164,74 @@ ul li a:hover {
     margin: 0 auto;
 }
 
-/* ====== OFERTAS ====== */
-/* Sección de ofertas de destinos */
 .ofertas {
     width: 100%;
     max-width: var(--site-max);
     margin: 0 auto;
     background: #FFFFFF;
-    padding: 40px clamp(12px, 4vw, 40px);  /* Padding responsivo */
+    padding: 40px clamp(12px, 4vw, 40px);
 }
 
-/* Título de la sección ofertas */
 .ofertas-titulo {
     text-align: center;
     font-size: 24px;
-    font-weight: 800;           /* Extra bold */
-    letter-spacing: .5px;       /* Espaciado entre letras */
+    font-weight: 800;
+    letter-spacing: .5px;
     color: #000;
     margin-bottom: 24px;
 }
 
-/* Texto destacado en el título */
 .ofertas-titulo span {
     color: var(--primary-blue);
 }
 
-/* Contenedor de las tarjetas de destinos usando Flexbox */
 .ofertas-destinos {
     display: flex;
-    justify-content: center;        /* Centra las tarjetas */
-    align-items: stretch;           /* Todas las tarjetas tienen la misma altura */
-    flex-wrap: wrap;                /* Se adaptan a pantallas pequeñas */
-    gap: clamp(16px, 2.5vw, 36px);  /* Espacio responsivo entre tarjetas */
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: clamp(16px, 2.5vw, 36px);
 }
 
-/* Tarjetas individuales de ofertas */
 .oferta-bogota,
 .oferta-cartagena,
 .oferta-amazonas {
-    flex: 1 1 300px;            /* Se expanden pero mínimo 300px */
-    max-width: 360px;           /* Ancho máximo */
+    flex: 1 1 300px;
+    max-width: 360px;
     background: #fff;
-    border: 1px solid #e6e6e6;  /* Borde gris claro */
+    border: 1px solid #e6e6e6;
     border-radius: 3px;
-    box-shadow: 0 3px 0 rgba(0,0,0,.18);  /* Sombra inferior */
-    overflow: hidden;           /* Oculta contenido que se desborde */
+    box-shadow: 0 3px 0 rgba(0,0,0,.18);
+    overflow: hidden;
     min-height: 300px;
     display: flex;
-    flex-direction: column;     /* Contenido apilado verticalmente */
+    flex-direction: column;
 }
 
-/* Imágenes de las ofertas */
 .oferta-bogota img,
 .oferta-cartagena img,
 .oferta-amazonas img {
     display: block;
     width: 100%;
-    height: 160px;              /* Altura fija para uniformidad */
-    object-fit: cover;          /* Recorta la imagen manteniendo proporción */
+    height: 160px;
+    object-fit: cover;
 }
 
-/* Contenido de texto de las ofertas */
 .oferta-body {
     padding: 18px 20px 22px;
     text-align: center;
-    flex: 1 1 auto;             /* Se expande para ocupar espacio disponible */
+    flex: 1 1 auto;
 }
 
-/* Nombre de la ciudad en las ofertas */
 .oferta-ciudad {
     margin: 6px 0 8px;
     font-size: 18px;
     font-weight: 800;
-    letter-spacing: 1px;        /* Espaciado entre letras */
+    letter-spacing: 1px;
     color: var(--primary-blue);
-    text-transform: uppercase;   /* Todo en mayúsculas */
+    text-transform: uppercase;
 }
 
-/* Subtítulo de las ofertas */
 .oferta-sub {
     margin: 0 0 14px;
     font-size: 18px;
@@ -273,7 +239,6 @@ ul li a:hover {
     color: #1f1f1f;
 }
 
-/* Precio de las ofertas */
 .oferta-precio {
     margin: 0;
     font-size: 20px;
@@ -281,26 +246,23 @@ ul li a:hover {
     color: #000;
 }
 
-/* ====== BENEFICIOS ====== */
-/* Sección de beneficios con fondo verde */
 .beneficios {
     width: 100%;
     max-width: var(--site-max);
-    background-color: var(--primary-green);  /* Fondo verde de la marca */
+    background-color: var(--primary-green);
     min-height: 450px;
     margin: 0 auto;
     padding: 0;
     float: left;
-    clear: both;                              /* Limpia flotados anteriores */
+    clear: both;
     position: relative;
     box-sizing: border-box;
 }
 
-/* Contenedor interno de beneficios */
 .beneficios__wrap {
     width: 100%;
     margin: 0;
-    padding: clamp(20px, 4vw, 60px) clamp(16px, 4vw, 100px);  /* Padding responsivo */
+    padding: clamp(20px, 4vw, 60px) clamp(16px, 4vw, 100px);
     box-sizing: border-box;
     min-height: 450px;
     display: flex;
@@ -309,61 +271,54 @@ ul li a:hover {
     gap: 14px;
 }
 
-/* Título de la sección beneficios */
 .beneficios h2 {
     text-align: center;
-    font-size: clamp(24px, 3vw, 40px);  /* Tamaño responsivo */
+    font-size: clamp(24px, 3vw, 40px);
     font-weight: 600;
     color: var(--text-dark);
     margin-bottom: 24px;
 }
 
-/* Lista de beneficios */
 .beneficios ul {
     margin: 0;
-    padding-left: 50px;         /* Espacio para las bullets */
-    line-height: 2;             /* Doble altura de línea para legibilidad */
+    padding-left: 50px;
+    line-height: 2;
     color: var(--text-dark);
     max-width: 100%;
 }
 
-/* Items individuales de la lista de beneficios */
 .beneficios li {
-    font-size: clamp(16px, 2vw, 24px);  /* Tamaño responsivo */
+    font-size: clamp(16px, 2vw, 24px);
     line-height: 1.8;
     color: var(--text-dark);
     margin: 5px 0;
     font-weight: normal;
 }
 
-/* ====== CHECK-IN ====== */
-/* Tarjeta de check-in flotante */
 .card-checkin {
-    position: absolute;                         /* Flotante sobre la imagen */
+    position: absolute;
     top: 50%;
-    right: clamp(16px, 6vw, 200px);            /* Posición responsiva desde la derecha */
-    transform: translateY(-50%);                /* Centra verticalmente */
-    width: min(90%, 360px);                     /* Ancho responsivo */
-    background: rgba(255,255,255,0.92);         /* Fondo casi opaco */
+    right: clamp(16px, 6vw, 200px);
+    transform: translateY(-50%);
+    width: min(90%, 360px);
+    background: rgba(255,255,255,0.92);
     border: 1px solid rgba(226,234,233,0.5);
     border-radius: 16px;
-    backdrop-filter: blur(8px);                 /* Efecto de desenfoque */
+    backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    box-shadow: 0 10px 30px rgba(0,0,0,.18);   /* Sombra pronunciada */
+    box-shadow: 0 10px 30px rgba(0,0,0,.18);
     color: var(--text-dark);
     padding: 22px 22px 18px;
-    z-index: 3;                                 /* Por encima de otros elementos */
+    z-index: 3;
     text-align: left;
 }
 
-/* Título del formulario de check-in */
 .card-checkin h1 {
     font-size: 22px;
     text-align: center;
     margin: 6px 0 12px 0;
 }
 
-/* Texto explicativo pequeño */
 .card-checkin p.small {
     font-size: 18px;
     color: var(--text-dark);
@@ -372,46 +327,40 @@ ul li a:hover {
     line-height: 1.35;
 }
 
-/* Etiquetas de los campos del formulario */
 .card-checkin label {
     display: block;
-    font-weight: 700;           /* Negrita */
+    font-weight: 700;
     font-size: 18px;
     margin: 10px 0 6px;
 }
 
-/* Campos de entrada del formulario */
 .card-checkin input {
     width: 100%;
     height: 36px;
-    border: 1px solid #d6dbe0;  /* Borde gris claro */
+    border: 1px solid #d6dbe0;
     border-radius: 8px;
     padding: 0 10px;
     font-size: 14px;
-    outline: none;              /* Elimina el outline por defecto */
+    outline: none;
 }
 
-/* Botón de envío del check-in */
 .card-checkin button {
     width: 100%;
     height: 38px;
-    border: 0;                  /* Sin borde */
-    border-radius: 24px;        /* Muy redondeado */
+    border: 0;
+    border-radius: 24px;
     background: var(--primary-blue);
     color: #fff;
     font-weight: 700;
-    cursor: pointer;            /* Cambia cursor al pasar por encima */
+    cursor: pointer;
     margin-top: 14px;
-    transition: background 0.3s ease;  /* Transición suave */
+    transition: background 0.3s ease;
 }
 
-/* Efecto hover del botón */
 .card-checkin button:hover {
-    background: #009ee0;        /* Azul más oscuro */
+    background: #009ee0;
 }
 
-/* ====== SECCIÓN HERO RESPONSIVE (Gestiona tu reserva) ====== */
-/* Página de ayuda/gestión */
 #contenedor2.help {
     width: 100%;
     max-width: var(--site-max);
@@ -420,31 +369,28 @@ ul li a:hover {
     background: #fff;
 }
 
-/* Hero principal de las páginas de ayuda */
 #contenedor2.help main,
 .hero-reserva {
     width: 100%;
     height: auto;
-    min-height: clamp(350px, 45vw, 550px);  /* Altura responsiva */
-    max-height: 550px;                       /* Altura máxima */
+    min-height: clamp(350px, 45vw, 550px);
+    max-height: 550px;
 }
 
-/* Contenedor del hero usando Flexbox */
 .help-hero,
 .hero-reserva {
     width: 100%;
     height: 100%;
     min-height: clamp(350px, 45vw, 550px);
     max-height: 550px;
-    display: flex;                          /* Layout de dos columnas */
-    overflow: hidden;                       /* Oculta desbordamiento */
+    display: flex;
+    overflow: hidden;
     box-sizing: border-box;
 }
 
-/* Columna de imagen (lado izquierdo) */
 .help-hero__img,
 .hero-reserva__img {
-    flex: 0 0 55%;                          /* 55% del ancho, sin crecer/encoger */
+    flex: 0 0 55%;
     min-width: 0;
     background-size: cover;
     background-position: center;
@@ -452,62 +398,56 @@ ul li a:hover {
     background-image: url(../img/ayuda%20indicacion.jpg);
 }
 
-/* Columna de contenido (lado derecho) */
 .help-hero__panel,
 .hero-reserva__panel {
-    flex: 0 0 45%;                          /* 45% del ancho */
-    background: var(--primary-blue);        /* Fondo azul */
+    flex: 0 0 45%;
+    background: var(--primary-blue);
     color: #fff;
     display: flex;
-    flex-direction: column;                 /* Contenido apilado */
-    justify-content: center;                /* Centra verticalmente */
-    align-items: flex-start;                /* Alinea a la izquierda */
-    padding: clamp(24px, 4vw, 48px);       /* Padding responsivo */
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: clamp(24px, 4vw, 48px);
     box-sizing: border-box;
     min-width: 0;
 }
 
-/* Título del panel de ayuda */
 .help-hero__panel h1 {
-    font-size: clamp(28px, 4vw, 56px);     /* Tamaño muy responsivo */
-    line-height: 1.05;                      /* Altura de línea compacta */
+    font-size: clamp(28px, 4vw, 56px);
+    line-height: 1.05;
     font-weight: 800;
     margin: 0 0 12px 0;
 }
 
-/* Párrafo explicativo */
 .help-hero__panel p {
     font-size: clamp(16px, 2vw, 22px);
     line-height: 1.5;
     margin: 0 0 24px 0;
-    max-width: 30ch;                        /* Máximo 30 caracteres de ancho */
+    max-width: 30ch;
     font-weight: lighter;
 }
 
-/* Botón principal del hero */
 .help-hero__btn {
     display: inline-block;
     background: #fff;
-    color: #0b6bbf;                         /* Azul más oscuro */
+    color: #0b6bbf;
     text-decoration: none;
     font-weight: 700;
     font-size: clamp(14px, 1.8vw, 20px);
     padding: clamp(10px, 1.2vw, 16px) clamp(16px, 2.2vw, 36px);
-    border-radius: 32px;                    /* Muy redondeado */
+    border-radius: 32px;
     min-width: 220px;
     text-align: center;
-    transition: filter .2s ease, transform .15s ease;  /* Transiciones múltiples */
-    align-self: flex-end;                   /* Se alinea al final del contenedor */
+    transition: filter .2s ease, transform .15s ease;
+    align-self: flex-end;
     margin-top: 12px;
 }
 
-/* Efectos hover del botón */
 .help-hero__btn:hover {
-    filter: brightness(0.95);               /* Ligeramente más oscuro */
-    transform: translateY(-1px);            /* Sube 1px */
+    filter: brightness(0.95);
+    transform: translateY(-1px);
 }
 
-/* Sección inferior de la página de ayuda */
 #contenedor2.help .sec_index {
     width: 100%;
     min-height: clamp(260px, 35vw, 450px);
@@ -518,14 +458,12 @@ ul li a:hover {
     box-sizing: border-box;
 }
 
-/* Cabecera de las acciones de ayuda */
 .help-actions__head {
     text-align: center;
     margin: 0 auto 28px;
     max-width: 1200px;
 }
 
-/* Título principal de acciones */
 .help-actions__head h2 {
     font-size: 44px;
     line-height: 1.15;
@@ -534,42 +472,37 @@ ul li a:hover {
     margin-bottom: 10px;
 }
 
-/* Texto explicativo */
 .help-actions__head p {
     font-size: 18px;
     color: #000;
     font-weight: lighter;
 }
 
-/* Enlaces dentro del texto */
 .help-actions__head a {
     color: #0b6bbf;
     text-decoration: underline;
 }
 
-/* Contenedor de tarjetas de ayuda */
 .help-cards {
     display: flex;
     justify-content: center;
-    align-items: stretch;                   /* Todas las tarjetas misma altura */
+    align-items: stretch;
     flex-wrap: wrap;
     gap: clamp(16px, 2vw, 28px);
     padding: 8px clamp(12px, 4vw, 60px);
     box-sizing: border-box;
 }
 
-/* Tarjetas individuales de ayuda */
 .help-card {
-    flex: 1 1 300px;                       /* Crecen desde 300px mínimo */
+    flex: 1 1 300px;
     max-width: 480px;
     background: #fff;
     border: 1px solid #e6e6e6;
     border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0,0,0,.08); /* Sombra suave */
+    box-shadow: 0 8px 24px rgba(0,0,0,.08);
     padding: 24px;
 }
 
-/* Título de cada tarjeta */
 .help-card h3 {
     font-size: 28px;
     margin: 10px 0 6px;
@@ -577,7 +510,6 @@ ul li a:hover {
     font-weight: 800;
 }
 
-/* Contenido de cada tarjeta */
 .help-card p {
     font-size: 18px;
     color: #000;
@@ -586,55 +518,47 @@ ul li a:hover {
     font-weight: lighter;
 }
 
-/* Iconos de las tarjetas de ayuda */
 .help-card__icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 12px;
-    background-color: #f1f3f5;              /* Fondo gris claro por defecto */
-    background-size: cover;
-    background-position: center;
-    background-image: url(../img/vuelo.png.jpg);  /* CORREGIDO: era vuelo.png.jpg, debería ser solo .png o .jpg */
+	width: 56px;
+	height: 56px;
+	border-radius: 12px;
+	background-color: #f1f3f5;
+	background-size: cover;
+	background-position: center;
 }
 
-/* Icono específico para documentos */
 .help-card__icon.doc {
-    background-color: #f1f8ff;              /* Fondo azul muy claro */
-    background-image: url(../img/datos%20personales.jpg);
+	background-color: #f1f8ff;
+	
 }
 
-/* Icono específico para millas */
 .help-card__icon.miles {
-    background-color: #fff5f5;              /* Fondo rosa muy claro */
-    background-image: url(../img/millas.jpg);
+	background-color: #fff5f5;
+
 }
 
-/* Botón con estilo outline */
 .btn-outline {
     display: inline-block;
     background: #fff;
     color: #000;
-    border: 2px solid #1a1a1a;              /* Borde negro */
-    border-radius: 999px;                   /* Completamente redondeado */
+    border: 2px solid #1a1a1a;
+    border-radius: 999px;
     padding: 12px 20px;
     font-weight: 800;
     text-decoration: none;
     transition: background .15s ease, color .15s ease, transform .15s ease;
 }
 
-/* Efectos hover del botón outline */
 .btn-outline:hover {
-    background: #1a1a1a;                    /* Fondo negro */
-    color: #fff;                            /* Texto blanco */
-    transform: translateY(-1px);            /* Sube ligeramente */
+    background: #1a1a1a;
+    color: #fff;
+    transform: translateY(-1px);
 }
 
-/* ====== ACCESO ====== */
-/* Hero de la página de acceso */
 body.acceso #contenedor main.acceso-hero {
     position: relative;
     width: 100%;
-    height: 550px;                          /* Altura fija */
+    height: 550px;
     color: #fff;
     background-image: url(../img/remodelacion.jpg);
     background-size: cover;
@@ -642,81 +566,71 @@ body.acceso #contenedor main.acceso-hero {
     background-repeat: no-repeat;
 }
 
-/* Overlay oscuro sobre la imagen */
 body.acceso #contenedor main.acceso-hero::before {
-    content: "";                            /* Pseudo-elemento vacío */
+    content: "";
     position: absolute;
-    inset: 0;                              /* Cubre todo el contenedor */
-    background: rgba(0,0,0,.18);           /* Overlay semi-transparente */
+    inset: 0;
+    background: rgba(0,0,0,.18);
 }
 
-/* Contenido del hero de acceso */
 body.acceso .acceso-hero__content {
     position: absolute;
-    right: 8%;                             /* 8% desde la derecha */
+    right: 8%;
     top: 50%;
-    transform: translateY(-50%);           /* Centra verticalmente */
+    transform: translateY(-50%);
     max-width: 460px;
     text-align: center;
-    background: rgba(255,255,255,.22);     /* Fondo blanco semi-transparente */
+    background: rgba(255,255,255,.22);
     border: 1px solid rgba(226,234,233,.55);
     border-radius: 16px;
     -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);            /* Efecto glassmorphism */
+    backdrop-filter: blur(8px);
     color: var(--text-dark);
     padding: 22px 24px;
-    z-index: 2;                           /* Por encima del overlay */
+    z-index: 2;
 }
 
-/* Título del contenido de acceso */
 body.acceso .acceso-hero__content h1 {
     margin: 0 0 10px;
     font-size: 28px;
     font-weight: 800;
 }
 
-/* Párrafo explicativo */
 body.acceso .acceso-hero__content p {
     margin: 0;
     font-size: 16px;
     line-height: 1.45;
 }
 
-/* ====== FORMULARIOS ====== */
-/* Página genérica con formularios */
 .page {
     max-width: 800px;
-    margin: 40px auto;                     /* Centra con margen superior/inferior */
+    margin: 40px auto;
     padding: 20px;
     text-align: center;
 }
 
-/* Título principal de página */
 .page h1 {
     font-size: 32px;
     margin-bottom: 15px;
     color: var(--text-dark);
 }
 
-/* Texto principal/introducción */
 .page .lead {
     font-size: 18px;
     margin-bottom: 30px;
     color: #333;
 }
 
-/* Tarjeta/contenedor de formulario */
 .card {
     background: #ffffff;
     border-radius: 12px;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.1); /* Sombra moderna */
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     padding: 30px;
     max-width: 500px;
-    margin: 0 auto;                         /* Centra la tarjeta */
-    text-align: left;                       /* Alinea contenido a la izquierda */
+    margin: 0 auto;
+    text-align: left;
 }
 
-/* Etiquetas de formulario */
 .form label {
     display: block;
     font-weight: bold;
@@ -724,130 +638,115 @@ body.acceso .acceso-hero__content p {
     color: var(--text-dark);
 }
 
-/* Campos de entrada de formulario */
 .form input {
     width: 100%;
-    padding: 12px 14px;                     /* Padding generoso */
+    padding: 12px 14px;
     border: 1px solid #ccc;
     border-radius: 8px;
     margin-bottom: 15px;
-    font-size: 16px;                        /* Tamaño legible en móviles */
+    font-size: 16px;
 }
 
-/* Botón de envío de formulario */
 .form button {
     width: 100%;
     padding: 14px;
     background: var(--primary-blue);
     color: #fff;
     border: none;
-    border-radius: 25px;                    /* Redondeado */
+    border-radius: 25px;
     font-size: 18px;
     cursor: pointer;
     transition: background 0.3s ease;
 }
 
-/* Efecto hover del botón */
 .form button:hover {
-    background: #009ee0;                    /* Azul más oscuro */
+    background: #009ee0;
 }
 
-/* ====== FOOTER ====== */
-/* Pie de página */
 #contenedor footer {
     width: 100%;
     max-width: var(--site-max);
     height: auto;
-    background-color: var(--primary-blue);  /* Fondo azul */
-    float: none;                            /* No flota */
-    clear: both;                            /* Limpia todos los flotados anteriores */
-    margin: 0 auto;                         /* Centra horizontalmente */
+    background-color: var(--primary-blue);
+    float: none;
+    clear: both;
+    margin: 0 auto;
     display: block;
     text-align: center;
-    padding: 30px 0;                        /* Espaciado interno vertical */
+    padding: 30px 0;
     font-size: 20px;
-    line-height: 1.6;                       /* Altura de línea para legibilidad */
-    letter-spacing: 0.5px;                  /* Espaciado entre letras */
-    color: #fff;                            /* Texto blanco */
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    color: #fff;
 }
 
-/* Párrafos dentro del footer */
 #contenedor footer p {
-    margin: 5px 0;                          /* Margen vertical pequeño */
+    margin: 5px 0;
 }
 
-/* ====== TARJETAS DE GESTIÓN (debajo del hero) ====== */
-/* Sección con tarjetas de gestión/servicios */
 .gestion-cards {
     width: 100%;
     max-width: var(--site-max);
     margin: 0 auto;
-    padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 60px);  /* Padding muy responsivo */
-    background: #f8f9fa;                    /* Fondo gris muy claro */
+    padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 60px);
+    background: #f8f9fa;
     box-sizing: border-box;
 }
 
-/* Título principal de la sección */
 .gestion-cards h2 {
     text-align: center;
-    font-size: clamp(24px, 3.5vw, 36px);   /* Tamaño muy responsivo */
+    font-size: clamp(24px, 3.5vw, 36px);
     font-weight: 800;
     color: #000;
     margin-bottom: clamp(20px, 3vw, 40px);
 }
 
-/* Párrafo explicativo de la sección */
 .gestion-cards p {
     text-align: center;
     font-size: clamp(14px, 1.8vw, 18px);
-    color: #666;                            /* Gris medio */
+    color: #666;
     margin-bottom: clamp(30px, 4vw, 50px);
-    max-width: 600px;                       /* Ancho máximo para legibilidad */
-    margin-left: auto;                      /* Centra horizontalmente */
+    max-width: 600px;
+    margin-left: auto;
     margin-right: auto;
 }
 
-/* Contenedor de las tarjetas usando Flexbox */
 .cards-container {
     display: flex;
-    justify-content: center;                /* Centra las tarjetas */
-    align-items: stretch;                   /* Todas tienen la misma altura */
-    gap: clamp(20px, 3vw, 40px);           /* Espacio responsivo entre tarjetas */
-    flex-wrap: wrap;                        /* Se adaptan a pantallas pequeñas */
+    justify-content: center;
+    align-items: stretch;
+    gap: clamp(20px, 3vw, 40px);
+    flex-wrap: wrap;
 }
 
-/* Tarjetas individuales de gestión */
 .gestion-card {
-    flex: 1 1 300px;                       /* Crecen desde 300px mínimo */
-    max-width: 380px;                       /* Ancho máximo */
-    min-height: 320px;                      /* Altura mínima uniforme */
+    flex: 1 1 300px;
+    max-width: 380px;
+    min-height: 320px;
     background: #fff;
     border: 1px solid #e6e6e6;
     border-radius: 12px;
-    padding: clamp(20px, 3vw, 30px);       /* Padding responsivo */
+    padding: clamp(20px, 3vw, 30px);
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Sombra suave */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-sizing: border-box;
 }
 
-/* Efecto hover en las tarjetas */
 .gestion-card:hover {
-    transform: translateY(-4px);            /* Sube ligeramente */
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12); /* Sombra más pronunciada */
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
-/* Iconos de las tarjetas de gestión */
 .gestion-card__icon {
-    width: clamp(50px, 8vw, 80px);          /* Tamaño responsivo */
+    width: clamp(50px, 8vw, 80px);
     height: clamp(50px, 8vw, 80px);
-    margin: 0 auto clamp(15px, 2vw, 25px);  /* Centra y añade margen inferior */
-    background-size: contain;               /* Imagen se ajusta sin recortar */
+    margin: 0 auto clamp(15px, 2vw, 25px);
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-/* Título de cada tarjeta */
 .gestion-card h3 {
     font-size: clamp(18px, 2.2vw, 24px);
     font-weight: 800;
@@ -855,100 +754,87 @@ body.acceso .acceso-hero__content p {
     margin-bottom: clamp(10px, 1.5vw, 15px);
 }
 
-/* Contenido/descripción de cada tarjeta */
 .gestion-card p {
     font-size: clamp(14px, 1.6vw, 16px);
     color: #666;
     line-height: 1.5;
     margin-bottom: clamp(15px, 2vw, 25px);
-    text-align: left;                       /* Alinea texto a la izquierda */
+    text-align: left;
 }
 
-/* Botón dentro de cada tarjeta */
 .gestion-card .btn-outline {
     font-size: clamp(12px, 1.4vw, 14px);
     padding: clamp(8px, 1vw, 12px) clamp(16px, 2vw, 24px);
     border-radius: 25px;
-    width: 100%;                            /* Ocupa todo el ancho disponible */
+    width: 100%;
     text-align: center;
     box-sizing: border-box;
 }
 
-/* ====== MEDIA QUERIES - RESPONSIVE DESIGN ====== */
-
-/* Responsive específico para las tarjetas - Pantallas medianas */
 @media (max-width: 1200px) {
     .cards-container {
-        gap: clamp(15px, 2.5vw, 30px);     /* Reduce el espacio entre tarjetas */
+        gap: clamp(15px, 2.5vw, 30px);
     }
     
     .gestion-card {
-        flex: 1 1 280px;                   /* Reduce ancho mínimo */
-        max-width: 350px;                   /* Reduce ancho máximo */
+        flex: 1 1 280px;
+        max-width: 350px;
     }
 }
 
-/* Pantallas pequeñas - Tablets */
 @media (max-width: 900px) {
-    /* Las tarjetas se apilan verticalmente */
     .cards-container {
-        flex-direction: column;             /* Apila verticalmente */
-        align-items: center;                /* Centra las tarjetas */
+        flex-direction: column;
+        align-items: center;
     }
     
     .gestion-card {
-        width: 100%;                        /* Ocupa todo el ancho */
-        max-width: 500px;                   /* Pero con un máximo */
-        flex: none;                         /* No se expande/contrae */
+        width: 100%;
+        max-width: 500px;
+        flex: none;
     }
     
-    /* Posiciona la tarjeta de check-in de forma estática en móviles */
     .card-checkin {
-        position: static;                   /* No flotante */
-        transform: none;                    /* Sin transformaciones */
-        margin: 16px auto 0;               /* Centra con margen superior */
-        width: min(92%, 420px);            /* Ancho responsivo */
+        position: static;
+        transform: none;
+        margin: 16px auto 0;
+        width: min(92%, 420px);
     }
 }
 
-/* Hero responsivo para tablets */
 @media (max-width: 1024px) {
     .help-hero {
-        flex-direction: column;             /* Apila imagen y contenido */
+        flex-direction: column;
     }
     
     .help-hero__img {
-        min-height: 240px;                  /* Altura mínima para la imagen */
-        background-position: center top;    /* Centra imagen en la parte superior */
+        min-height: 240px;
+        background-position: center top;
     }
     
     .help-hero__panel {
-        align-items: flex-start;            /* Mantiene alineación izquierda */
+        align-items: flex-start;
     }
 }
 
-/* Pantallas muy pequeñas - Móviles */
 @media (max-width: 600px) {
     .gestion-cards {
-        padding: 30px 15px;                 /* Reduce padding en móviles */
+        padding: 30px 15px;
     }
     
     .gestion-card {
-        min-height: auto;                   /* Altura automática */
-        padding: 20px;                      /* Padding fijo más pequeño */
+        min-height: auto;
+        padding: 20px;
     }
 }
 
-/* Ajustes específicos para móviles medianos */
 @media (max-width: 768px) {
     .help-hero__btn {
-        align-self: stretch;                /* Botón ocupa todo el ancho */
-        text-align: center;                 /* Centra el texto */
+        align-self: stretch;
+        text-align: center;
     }
 }
 
-/* ====== UTILIDADES ====== */
-/* Clase utilitaria para margen superior */
 .m20 {
-    margin-top: 20px;                       /* 20px de margen superior */
+    margin-top: 20px;
 }
